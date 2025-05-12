@@ -8,11 +8,11 @@ from tensorflow.keras.preprocessing import image
 from tensorflow.keras.models import Model
 from sklearn.metrics.pairwise import cosine_similarity
 
-# MobileNetV2 modelini yükle (son sınıflandırma katmanları hariç)
+# Load the MobileNetV2 model (excluding classification layers)
 base_model = MobileNetV2(weights='imagenet', include_top=False, pooling='avg', input_shape=(224, 224, 3))
 model = Model(inputs=base_model.input, outputs=base_model.output)
 
-# Özellik çıkarma fonksiyonu
+# Feature extraction function
 def extract_features(img_path):
     try:
         img = image.load_img(img_path, target_size=(224, 224))
@@ -24,20 +24,20 @@ def extract_features(img_path):
     except Exception as e:
         raise RuntimeError(f"Feature extraction failed for {img_path}: {e}")
 
-# Dosya yolları
+# Define file paths
 target_path = "input/reference.jpg"
 dataset_folder = "dataset/"
 results_folder = "results_mobilenet/"
 os.makedirs(results_folder, exist_ok=True)
 
-# Dataset görsellerini listele
+# List dataset images (.jpg only)
 image_files = [f for f in os.listdir(dataset_folder) if f.lower().endswith(".jpg")]
 
-# Hedef görselin özelliklerini çıkar
+# Extract features from the target image
 print("Extracting features from target image using MobileNetV2...")
 target_features = extract_features(target_path)
 
-# Karşılaştırma
+# Compare features from each dataset image
 results = []
 for img_name in image_files:
     img_path = os.path.join(dataset_folder, img_name)
@@ -48,15 +48,15 @@ for img_name in image_files:
     except Exception as e:
         print(f"Skipping {img_name} due to error: {e}")
 
-# Sonuçları sırala
+# Sort results by similarity (descending)
 results.sort(key=lambda x: x[1], reverse=True)
 
-# Sonuçları yazdır
+# Print results to console
 print("\nTop Matching Results:")
 for name, score in results:
     print(f"{name}: Similarity = %{score * 100:.2f}")
 
-# Benzer görselleri kopyala ve output.txt'ye yaz
+# Copy similar images to output folder and write to output.txt
 threshold = 0.85
 output_txt_path = os.path.join(results_folder, "output.txt")
 
@@ -69,8 +69,8 @@ with open(output_txt_path, "w", encoding="utf-8") as f:
             src = os.path.join(dataset_folder, name)
             dst = os.path.join(results_folder, name)
             shutil.copy(src, dst)
-            yuzde = f"%{score * 100:.2f}"
-            line = f"{index:>2}. {name:<15} {yuzde}"
+            percent = f"%{score * 100:.2f}"
+            line = f"{index:>2}. {name:<15} {percent}"
             f.write(line + "\n")
             print(line)
             index += 1
