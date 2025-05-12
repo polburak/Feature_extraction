@@ -13,8 +13,8 @@ A comparative image feature extraction system using MobileNetV2, ResNet50, Effic
 
 You can download sample reference and dataset images from the links below:
 
-- 📥 [Download `input/` folder (reference image)](https://drive.google.com/drive/u/0/folders/1n3GDFoQeQnrIUr1jWmqPmk-Ma1oX2laO)
-- 📥 [Download `dataset/` folder (images to compare)](https://drive.google.com/drive/u/0/folders/1VcItX9HWAGZfJxiO_DKOUbtOPEcAq0lZ)
+- 📥 [Download `input/` folder (reference image)](https://drive.google.com/drive/folders/1n3GDFoQeQnrIUr1jWmqPmk-Ma1oX2laO?usp=sharing)
+- 📥 [Download `dataset/` folder (images to compare)](https://drive.google.com/drive/folders/1VcItX9HWAGZfJxiO_DKOUbtOPEcAq0lZ?usp=sharing)
 
 
 ## Installation
