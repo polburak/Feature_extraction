@@ -5,7 +5,7 @@ A comparative image feature extraction system using MobileNetV2, ResNet50, Effic
 ## This project extracts feature vectors from images using different pre-trained deep learning models and compares the similarities between images. It includes:
 
 - Visual similarity models: MobileNetV2, ResNet50, EfficientNetB0
-- Semantic similarity model: CLIP (ViT-B/32)
+- Semantic similarity model: CLIP (ViT-B/32), OpenCLIP (ViT-B/32, ViT-L/14, vb.)
 - Cosine similarity scoring
 - Auto-copying of top matches to result folders
 
