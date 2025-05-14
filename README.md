@@ -42,16 +42,18 @@ python mobilenet_feature_match.py
 python resnet_feature_match.py
 python efficientnet_feature_match.py
 python clip_feature_match.py
+python openclip_feature_matcher.py
 ```
 
 ## Model Comparison
 
-| Model          | Type               | Strength                  |
-|----------------|--------------------|---------------------------|
-| MobileNetV2    | CNN (Lightweight)  | Fast, Mobile-friendly     |
-| ResNet50       | CNN (Residual)     | Balanced performance      |
-| EfficientNetB0 | CNN (Optimized)    | Good accuracy, small size |
-| CLIP           | Vision Transformer | Semantic understanding    |
+| Model          | Type               | Strength                              |
+|----------------|--------------------|---------------------------------------|
+| MobileNetV2    | CNN (Lightweight)  | Fast, Mobile-friendly                 |
+| ResNet50       | CNN (Residual)     | Balanced performance                  |
+| EfficientNetB0 | CNN (Optimized)    | Good accuracy, small size             |
+| CLIP           | Vision Transformer | Semantic understanding                |
+| OPENCLIP       | Vision Transformer |Large-scale pretrained, multimodal use |
 
 ## File Structure
 ```
@@ -62,10 +64,12 @@ feature_extraction/
 ├── results_resnet/
 ├── results_efficientnet/
 ├── results_clip/
+├── results_openclip/
 ├── mobilenet_feature_match.py
 ├── resnet_feature_match.py
 ├── efficientnet_feature_match.py
 ├── clip_feature_match.py
+├── openclip_feature_match.py
 ├── requirements.txt
 └── README.md
 ```
