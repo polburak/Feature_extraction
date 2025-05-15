@@ -1,6 +1,6 @@
 # Feature Extraction with Deep Learning Models
 
-A comparative image feature extraction system using MobileNetV2, ResNet50, EfficientNetB0, and CLIP to compute both visual and semantic similarities between images.
+A comparative image feature extraction system using MobileNetV2, ResNet50, EfficientNetB0, and CLIP (including OpenCLIP) to compute both visual and semantic similarities between images.
 
 ## This project extracts feature vectors from images using different pre-trained deep learning models and compares the similarities between images. It includes:
 
