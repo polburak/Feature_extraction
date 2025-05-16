@@ -59,7 +59,7 @@ dino_feature_matcher.py
 
 ## Processing Time
 
-| Model (+CPU)   | Total Processing Time |
+| Model (+GPU)   | Total Processing Time |
 |----------------|-----------------------|
 | CLIP           | 5.85 seconds          | 
 | OpenCLIP       | 5.94 seconds          | 
